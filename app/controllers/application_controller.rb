@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
     language = Identifier.identify(text)
     render json: language
   end
+
+  def training
+    text = params[:text]
+    language = params[:language]
+    Trainer.train(text, language)
+    head :ok
+  end
 end
