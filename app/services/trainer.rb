@@ -2,7 +2,7 @@ class Trainer
 
     def self.train(text, language)
         self.clear_language(language)
-        words = self.parse(text)
+        words = TextPreprocessor.prepare(text)
         self.probabilities(words, language)
     end
 
@@ -10,12 +10,6 @@ class Trainer
     def self.clear_language(language)
         FirstLetter.where(language: language).destroy_all
         ChainedLetter.where(language: language).destroy_all
-    end
-
-    # Remove all special characters and convert all
-    # letters into lowercases to obtain the set of words
-    def self.parse(text)
-        text.downcase.split(" ")
     end
 
     # Using all words in the set of words, calculate the
