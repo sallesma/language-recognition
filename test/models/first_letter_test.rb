@@ -10,6 +10,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_first_letters_on_language  (language)
+#  index_first_letters_on_letter    (letter)
+#
 
 require 'test_helper'
 

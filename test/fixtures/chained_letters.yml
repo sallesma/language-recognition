@@ -11,6 +11,12 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
+# Indexes
+#
+#  index_chained_letters_on_first_letter   (first_letter)
+#  index_chained_letters_on_language       (language)
+#  index_chained_letters_on_second_letter  (second_letter)
+#
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
