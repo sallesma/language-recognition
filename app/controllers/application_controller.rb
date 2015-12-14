@@ -5,14 +5,23 @@ class ApplicationController < ActionController::Base
 
   def identify
     text = params[:text]
-    language = Identifier.identify(text)
-    render json: language
+    if text
+      locale = Identifier.identify(text)
+      puts locale
+      render json: locale
+    else
+      head 422
+    end
   end
 
   def training
     text = params[:text]
-    language = params[:language]
-    Trainer.train(text, language)
-    head :ok
+    locale = params[:locale]
+    if text && locale
+      Trainer.train(text, locale)
+      head :ok
+    else
+      head 422
+    end
   end
 end

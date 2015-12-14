@@ -3,7 +3,7 @@ class CreateChainedLetters < ActiveRecord::Migration
     create_table :chained_letters do |t|
       t.string :first_letter
       t.string :second_letter
-      t.string :language
+      t.string :locale
       t.integer :occurences,   default: 0
       t.decimal :frequency,    default: 0
 
@@ -11,6 +11,6 @@ class CreateChainedLetters < ActiveRecord::Migration
     end
     add_index :chained_letters, :first_letter
     add_index :chained_letters, :second_letter
-    add_index :chained_letters, :language
+    add_index :chained_letters, :locale
   end
 end

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151213145412) do
   create_table "chained_letters", force: :cascade do |t|
     t.string   "first_letter"
     t.string   "second_letter"
-    t.string   "language"
+    t.string   "locale"
     t.integer  "occurences",    default: 0
     t.decimal  "frequency",     default: 0.0
     t.datetime "created_at",                  null: false
@@ -24,19 +24,19 @@ ActiveRecord::Schema.define(version: 20151213145412) do
   end
 
   add_index "chained_letters", ["first_letter"], name: "index_chained_letters_on_first_letter"
-  add_index "chained_letters", ["language"], name: "index_chained_letters_on_language"
+  add_index "chained_letters", ["locale"], name: "index_chained_letters_on_locale"
   add_index "chained_letters", ["second_letter"], name: "index_chained_letters_on_second_letter"
 
   create_table "first_letters", force: :cascade do |t|
     t.string   "letter"
-    t.string   "language"
+    t.string   "locale"
     t.integer  "occurences", default: 0
     t.decimal  "frequency",  default: 0.0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
-  add_index "first_letters", ["language"], name: "index_first_letters_on_language"
   add_index "first_letters", ["letter"], name: "index_first_letters_on_letter"
+  add_index "first_letters", ["locale"], name: "index_first_letters_on_locale"
 
 end

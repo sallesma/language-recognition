@@ -3,7 +3,7 @@
 
 ### Train
 ```
-http://localhost:3000/training.json?text=<text>&language=<language>
+http://localhost:3000/training.json?text=<text>&locale=<locale>
 ```
 
 ### Identify

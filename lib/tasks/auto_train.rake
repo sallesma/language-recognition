@@ -1,10 +1,8 @@
-desc "Fetch wikipedia articles from one language to train"
+desc "Fetch wikipedia articles from one locale to train"
 task :auto_train_from_wikipedia => :environment do
   puts 'Starting training...'
-  language = ARGV[1].to_s
-  locale = ARGV[2].to_s
-  number = ARGV[3]
-  puts language
+  locale = ARGV[1].to_s
+  number = ARGV[2]
   puts locale
   puts number
 
@@ -12,7 +10,7 @@ task :auto_train_from_wikipedia => :environment do
     puts "Training with text number: #{i}"
     title, text = Wikipedia.article(locale)
     puts "Training from: #{title}, number of characters: #{text.length}"
-    Trainer.train(text, language)
+    Trainer.train(text, locale)
   end
 
   puts 'Finished training.'

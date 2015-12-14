@@ -5,7 +5,7 @@
 #  id            :integer          not null, primary key
 #  first_letter  :string
 #  second_letter :string
-#  language      :string
+#  locale        :string
 #  occurences    :integer          default(0)
 #  frequency     :decimal(, )      default(0.0)
 #  created_at    :datetime         not null
@@ -14,7 +14,7 @@
 # Indexes
 #
 #  index_chained_letters_on_first_letter   (first_letter)
-#  index_chained_letters_on_language       (language)
+#  index_chained_letters_on_locale         (locale)
 #  index_chained_letters_on_second_letter  (second_letter)
 #
 
@@ -23,13 +23,13 @@
 one:
   first_letter: MyString
   second_letter: MyString
-  language: MyString
+  locale: MyString
   occurences: 1
   frequency: 9.99
 
 two:
   first_letter: MyString
   second_letter: MyString
-  language: MyString
+  locale: MyString
   occurences: 1
   frequency: 9.99
