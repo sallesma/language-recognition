@@ -15,5 +15,5 @@ task :auto_train_from_wikipedia => :environment do
 
   puts 'Finished training.'
 
-  (1..3).each { |i| task ARGV[i].to_sym do;end if ARGV[i] }
+  (1..2).each { |i| task ARGV[i].to_sym do;end if ARGV[i] }
 end
