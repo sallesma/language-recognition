@@ -1,5 +1,6 @@
 # README
 
+Just trying out stuff about markov chains to determine the language of a text
 
 ### Train
 ```
