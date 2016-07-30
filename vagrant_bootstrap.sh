@@ -34,5 +34,8 @@ rbenv global 2.2.2
 gem install bundler
 rbenv rehash
 
+# Install Heroku
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh 
+
 # cleanup
 sudo apt-get clean
