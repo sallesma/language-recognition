@@ -8,7 +8,6 @@ All the hard work of thinking had been made by Dat Tran and Dharmendra Sharma at
 
 [![Build Status](https://travis-ci.org/sallesma/markov-language.svg?branch=master)](https://travis-ci.org/sallesma/markov-language)
 
-Just trying out stuff about markov chains to determine the language of a text
 
 ## Usage
 
