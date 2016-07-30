@@ -1,6 +1,6 @@
 language: ruby
 rvm:
- - 2.2
+  - 2.2.2
 
 cache: bundler
 
@@ -12,3 +12,9 @@ before_script:
 
 script: bundle exec rspec spec
 
+deploy:
+  provider: heroku
+  app: language-recognition
+  api_key:
+    secure: MHFBIWM1MIurmRmsT+iH+d5wRLOiiIF3/H40SA49Zy+FE6EalURZzxBD0TFK6qwujoM3NJenPhtX6MkGL/R+5fXNVy3UbEbXv+W8DPi5zbffdJPIAlSfAUkCyeF6yHX5JaSeJH3QoxBM5VToEEM3Eq3Cdr2wKkRX51ySPMbfNMKYY66Q06PuhjQypOuZ7r3HjhpDPymSdYFQyXepwJIN7Pgp6LDdyl/plFFj5TzhJ5SyczO9lKq7K1b0nq2NitEafyFkPHWKNcuQPALvxOdaJqKv4D90y/Y24QJETbKhXttBwMYWGcYh1uT4m8QBXdZ0qReh52EE/MC2Smtvls1zV5DDadYX5VURhPAKlZhhq7em3UZV+jBZLtR6TIVmruNQY8HzOeBAjZgbnOjLMJmNKCMyLk0B1N0SmdxoPR75VSw+1/LhVqMcm/dlEMq8AwLhu7+i8TJf+pzYyBbJ1oQOblu7saPGpoys+21c9q/wJYTA3pZVwPIiy0xpvrE5P24XAdNfuOrFbFrl+WioBkMz3yIzG48hlg2/VqiEclY78vXP9WqGNeJ1nK6+6BQbPfYiTgjwVpV65uqnFox2x/iHSg1+99qEKf3HlOUyL2xQnNB5LrQVkw9g7co+rFeW//7G/tHKfZuqwstW8ieHpn+nesrMqNl17hJtEgkf2VZM/uI=
+  run: rake db:migrate

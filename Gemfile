@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'rails', '~> 4.2'
 gem 'pg'
@@ -6,6 +7,10 @@ gem 'pg'
 gem 'nokogiri'
 gem 'open_uri_redirections'
 gem 'sanitize'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'
