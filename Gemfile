@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'annotate'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
