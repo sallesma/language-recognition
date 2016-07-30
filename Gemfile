@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'nokogiri'
 gem 'open_uri_redirections'

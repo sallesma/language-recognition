@@ -16,8 +16,8 @@ sudo apt-get install -y libsqlite3-dev git nodejs
 # Qt and xvfb-run for Capybara Webkit
 sudo apt-get install -y libqtwebkit-dev xvfb
 
-# SQLite3
-sudo apt-get install -y sqlite3
+# PostgreSQL
+sudo apt-get install -y libpq-dev postgresql
 
 # setup rbenv and ruby-build
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -29,12 +29,10 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 export RBENV_ROOT="${HOME}/.rbenv"
 export PATH="${RBENV_ROOT}/bin:${PATH}"
 export PATH="${RBENV_ROOT}/shims:${PATH}"
-rbenv install 2.1.4
-rbenv global 2.1.4
+rbenv install 2.2.2
+rbenv global 2.2.2
 gem install bundler
 rbenv rehash
-
-gem install rails
 
 # cleanup
 sudo apt-get clean
