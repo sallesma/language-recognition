@@ -12,6 +12,8 @@ All the hard work of thinking had been made by Dat Tran and Dharmendra Sharma at
 ## Usage
 
 ### Train
+
+Sending a GET request:
 ```
 http://localhost:3000/training.json?text=<text>&locale=<locale>
 ```
@@ -23,6 +25,9 @@ where en is the locale and 3 the number or articles to fetch from wikipedia
 
 
 ### Identify
+
+Sending a GET request:
 ```
 http://localhost:3000/identify.json?text=<text>
 ```
+The server will answer with the locale
