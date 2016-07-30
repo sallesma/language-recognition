@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151213145412) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chained_letters", force: :cascade do |t|
     t.string   "first_letter"
     t.string   "second_letter"
@@ -23,9 +26,9 @@ ActiveRecord::Schema.define(version: 20151213145412) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_index "chained_letters", ["first_letter"], name: "index_chained_letters_on_first_letter"
-  add_index "chained_letters", ["locale"], name: "index_chained_letters_on_locale"
-  add_index "chained_letters", ["second_letter"], name: "index_chained_letters_on_second_letter"
+  add_index "chained_letters", ["first_letter"], name: "index_chained_letters_on_first_letter", using: :btree
+  add_index "chained_letters", ["locale"], name: "index_chained_letters_on_locale", using: :btree
+  add_index "chained_letters", ["second_letter"], name: "index_chained_letters_on_second_letter", using: :btree
 
   create_table "first_letters", force: :cascade do |t|
     t.string   "letter"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151213145412) do
     t.datetime "updated_at",               null: false
   end
 
-  add_index "first_letters", ["letter"], name: "index_first_letters_on_letter"
-  add_index "first_letters", ["locale"], name: "index_first_letters_on_locale"
+  add_index "first_letters", ["letter"], name: "index_first_letters_on_letter", using: :btree
+  add_index "first_letters", ["locale"], name: "index_first_letters_on_locale", using: :btree
 
 end
