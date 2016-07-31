@@ -9,9 +9,14 @@ class Trainer
         words = TextPreprocessor.prepare(text)
         first_letters, chained_letters = self.parse_text(words)
 
-        language = Language.find_by(locale: locale)
+        language = self.language(locale)
         self.save_first(first_letters, language)
         self.save_chained(chained_letters, language)
+        true
+    end
+
+    def self.language(locale)
+        Language.find_or_create_by(locale: locale)
     end
 
     def self.parse_text(words)
