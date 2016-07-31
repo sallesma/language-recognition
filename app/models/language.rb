@@ -18,5 +18,7 @@ class Language < ActiveRecord::Base
   has_many :first_letters, dependent: :destroy
   has_many :chained_letters, dependent: :destroy
 
+  has_many :identifications, dependent: :nullify
+
   validates_uniqueness_of :locale
 end
