@@ -6,9 +6,8 @@ class ApplicationController < ActionController::Base
   def identify
     text = params[:text]
     if text
-      locale = Identifier.identify(text)
-      puts locale
-      render json: locale
+      language = Identifier.identify(text)
+      render json: language
     else
       head 422
     end

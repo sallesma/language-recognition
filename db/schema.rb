@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151213145412) do
+ActiveRecord::Schema.define(version: 20160731140810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,27 +19,37 @@ ActiveRecord::Schema.define(version: 20151213145412) do
   create_table "chained_letters", force: :cascade do |t|
     t.string   "first_letter"
     t.string   "second_letter"
-    t.string   "locale"
     t.integer  "occurences",    default: 0
     t.decimal  "frequency",     default: 0.0
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "language_id"
   end
 
   add_index "chained_letters", ["first_letter"], name: "index_chained_letters_on_first_letter", using: :btree
-  add_index "chained_letters", ["locale"], name: "index_chained_letters_on_locale", using: :btree
+  add_index "chained_letters", ["language_id"], name: "index_chained_letters_on_language_id", using: :btree
   add_index "chained_letters", ["second_letter"], name: "index_chained_letters_on_second_letter", using: :btree
 
   create_table "first_letters", force: :cascade do |t|
     t.string   "letter"
-    t.string   "locale"
-    t.integer  "occurences", default: 0
-    t.decimal  "frequency",  default: 0.0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "occurences",  default: 0
+    t.decimal  "frequency",   default: 0.0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "language_id"
   end
 
+  add_index "first_letters", ["language_id"], name: "index_first_letters_on_language_id", using: :btree
   add_index "first_letters", ["letter"], name: "index_first_letters_on_letter", using: :btree
-  add_index "first_letters", ["locale"], name: "index_first_letters_on_locale", using: :btree
 
+  create_table "languages", force: :cascade do |t|
+    t.string   "locale"
+    t.string   "name"
+    t.string   "local_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "chained_letters", "languages"
+  add_foreign_key "first_letters", "languages"
 end
