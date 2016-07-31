@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
     text = params[:text]
     if text
       language = Identifier.identify(text)
-      puts language
       render json: language
     else
       head 422

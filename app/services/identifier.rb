@@ -8,7 +8,6 @@ class Identifier
             probabilities[language] = self.probability(words, language)
         end
 
-        puts probabilities
         probabilities.max_by{|k,v| v}.first
     end
 
