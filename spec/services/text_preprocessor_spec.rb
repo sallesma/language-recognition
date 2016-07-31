@@ -22,4 +22,18 @@ RSpec.describe TextPreprocessor, type: :service do
 
     expect(result).to eq(['title'])
   end
+
+  it 'keeps spanish special characters' do
+    text = 'de tamaño muy variable según'
+    result = TextPreprocessor.prepare(text)
+
+    expect(result).to eq(['de', 'tamaño', 'muy', 'variable', 'según'])
+  end
+
+  it 'keeps chinese characters' do
+    text = '汉语 漢語'
+    result = TextPreprocessor.prepare(text)
+
+    expect(result).to eq(['汉语', '漢語'])
+  end
 end
