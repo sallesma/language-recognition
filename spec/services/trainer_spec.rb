@@ -12,4 +12,8 @@ RSpec.describe Trainer, type: :service do
     expect(language.first_letters.pluck(:letter, :occurences, :frequency)).to match_array(Fixtures::BasicEnglish::first_letters)
     expect(language.chained_letters.pluck(:first_letter, :second_letter, :occurences, :frequency)).to match_array(Fixtures::BasicEnglish::chained_letters)
   end
+
+  after(:all) do
+    Language.destroy_all
+  end
 end
