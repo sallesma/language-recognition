@@ -36,12 +36,11 @@ class Trainer
     end
 
     def self.save_first(first_letters, language)
-        first_letters_sum = FirstLetter.where(language: language).sum(:occurences) + first_letters.values.reduce(:+)
+        first_letters_sum = language.first_letters.sum(:occurences) + first_letters.values.reduce(:+)
 
         first_letters.each do |letter, occurences|
-            first_letter = FirstLetter.find_or_create_by(
-                letter: letter,
-                language: language
+            first_letter = language.first_letters.find_or_create_by(
+                letter: letter
             )
             first_letter.update(
                 occurences: first_letter.occurences + occurences,
@@ -53,14 +52,13 @@ class Trainer
     def self.save_chained(chained_letters, language)
         chained_letters_sums = {}
         chained_letters.keys.map {|k| k.to_s.first}.uniq.each do |fl|
-            chained_letters_sums[fl] = ChainedLetter.where(language: language, first_letter: fl).sum(:occurences) + chained_letters.select { |k,v| k.first == fl }.values.reduce(:+)
+            chained_letters_sums[fl] = language.chained_letters.where(first_letter: fl).sum(:occurences) + chained_letters.select { |k,v| k.first == fl }.values.reduce(:+)
         end
 
         chained_letters.each do |letters, occurences|
-            chained_letter = ChainedLetter.find_or_create_by(
+            chained_letter = language.chained_letters.find_or_create_by(
                 first_letter: letters.first,
-                second_letter: letters.last,
-                language: language
+                second_letter: letters.last
             )
             chained_letter.update(
                 occurences: chained_letter.occurences + occurences,
