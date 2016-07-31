@@ -6,7 +6,8 @@ All the hard work of thinking had been made by Dat Tran and Dharmendra Sharma at
 
 ## Code status
 
-[![Build Status](https://travis-ci.org/sallesma/markov-language.svg?branch=master)](https://travis-ci.org/sallesma/markov-language)
+[![Build Status](https://travis-ci.org/sallesma/language-recognition.svg?branch=master)](https://travis-ci.org/sallesma/language-recognition)
+[![Code Climate](https://codeclimate.com/github/sallesma/language-recognition/badges/gpa.svg)](https://codeclimate.com/github/sallesma/language-recognition)
 [![Coverage Status](https://coveralls.io/repos/github/sallesma/language-recognition/badge.svg?branch=master)](https://coveralls.io/github/sallesma/language-recognition?branch=master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/sallesma/language-recognition.svg)](https://gemnasium.com/github.com/sallesma/language-recognition)
 
