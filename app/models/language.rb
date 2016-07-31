@@ -9,8 +9,14 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_languages_on_locale  (locale) UNIQUE
+#
 
 class Language < ActiveRecord::Base
-  has_many :first_letters
-  has_many :chained_letters
+  has_many :first_letters, dependent: :destroy
+  has_many :chained_letters, dependent: :destroy
+
+  validates_uniqueness_of :locale
 end

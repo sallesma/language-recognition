@@ -15,16 +15,14 @@ class Identifier
         probability = 0
 
         words.each do |word|
-            probability += FirstLetter.find_by(
-                letter: word.first,
-                language: language
+            probability += language.first_letters.find_by(
+                letter: word.first
             ).try(:frequency) || 0
 
             for i in 1..word.length-1
-                probability += ChainedLetter.find_by(
+                probability += language.chained_letters.find_by(
                     first_letter: word[i-1],
-                    second_letter: word[i],
-                    language: language
+                    second_letter: word[i]
                 ).try(:frequency) || 0
             end
         end
