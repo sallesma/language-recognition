@@ -15,6 +15,7 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'pry'
+  gem 'coveralls', require: false
 end
 
 group :development do

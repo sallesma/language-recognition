@@ -21,3 +21,6 @@
 
 # travis
 travis.log
+
+# Coverall
+/coverage
