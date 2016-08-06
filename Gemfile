@@ -23,7 +23,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'annotate'
+  gem 'annotate', '~> 2.7'
 end
 
 group :test do
