@@ -1,17 +1,24 @@
 class Identifier
 
-    def self.identify(text)
-        words = TextPreprocessor.prepare(text)
+    def process(identification)
+        language = identify(identification.text)
+        identification.update(language: language)
+    end
+
+    private
+
+    def identify(text)
+        words = text_processor.prepare(text)
         
         probabilities = {}
         Language.all.each do |language|
-            probabilities[language] = self.probability(words, language)
+            probabilities[language] = probability(words, language)
         end
 
-        probabilities.max_by{|k,v| v}.first
+        probabilities.max_by{|k,v| v}.try(:first)
     end
 
-    def self.probability(words, language)
+    def probability(words, language)
         probability = 0
 
         words.each do |word|
@@ -28,5 +35,9 @@ class Identifier
         end
 
         probability
+    end
+
+    def text_processor
+        @text_processor ||= TextPreprocessor.new
     end
 end

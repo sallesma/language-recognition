@@ -16,6 +16,7 @@ class IdentificationsController < ApplicationController
     @identification = Identification.new(identification_params)
 
     if @identification.save
+      Identifier.new.process(@identification)
       redirect_to @identification, notice: 'Identification was successfully created.'
     else
       render :new

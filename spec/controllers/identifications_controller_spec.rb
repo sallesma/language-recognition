@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe IdentificationsController, type: :controller do
+
   describe "GET #index" do
     it "populates an array of identifications" do
       identification = FactoryGirl.create(:identification)
@@ -40,6 +41,11 @@ RSpec.describe IdentificationsController, type: :controller do
   end
 
    describe "POST #create" do
+    let(:identifier) { double 'Identifier', process: true }
+    before(:each) do
+      stub_const 'Identifier', double(new: identifier)
+    end
+
     context "with valid params" do
       it "creates a new Identification" do
         expect {

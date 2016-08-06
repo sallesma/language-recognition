@@ -6,7 +6,7 @@ class Trainer
     # chained P (x, y) = (occurences of x, y) / (number of pairs with x, z)
 
     def self.train(text, locale)
-        words = TextPreprocessor.prepare(text)
+        words = TextPreprocessor.new.prepare(text)
         first_letters, chained_letters = self.parse_text(words)
 
         language = self.language(locale)

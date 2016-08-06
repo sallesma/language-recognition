@@ -1,42 +1,5 @@
 module Fixtures
-  module BasicEnglish
-    def self.text
-      "This is a test."
-    end
-
-    def self.first_letters
-      [
-        ['t', 2, 0.5],
-        ['i', 1, 0.25],
-        ['a', 1, 0.25]
-      ]
-    end
-
-    def self.chained_letters
-      [
-        ['t', 'h', 1, 0.5],
-        ['h', 'i', 1, 1.0],
-        ['i', 's', 2, 1.0],
-        ['t', 'e', 1, 0.5],
-        ['e', 's', 1, 1.0],
-        ['s', 't', 1, 1.0]
-      ]
-    end
-  end
-  
-  module BasicFrench
-    def self.text
-      "Dessine moi un mouton."
-    end
-  end
-
-  module BasicSpanish
-    def self.text
-      "Cuando sale la luna se pierden las campañas y aparecen las sendas impenetrables."
-    end
-  end
-
-  module FullText
+  module Text
     def self.english
       "The tomato (see pronunciation) is the edible, often red berry-type fruit of Solanum lycopersicum, commonly known as a tomato plant, which belongs to the nightshade family, Solanaceae. The species originated in Central and South America. The Nahuatl (Aztec language) word tomatl gave rise to the Spanish word \"tomate\", where the English word tomato comes from. Its many varieties are widely grown, sometimes in greenhouses in cooler climates. The plants typically grow to 1–3 meters (3–10 ft) in height and have a weak stem that often sprawls over the ground and vines over other plants. It is a perennial in its native habitat, and grown as an annual in temperate climates. An average common tomato weighs approximately 100 grams (4 oz). Its use as a food originated in Mexico, and spread throughout the world following the Spanish colonization of the Americas. The tomato is consumed in diverse ways, including raw, as an ingredient in many dishes, sauces, salads, and drinks. While tomatoes are botanically and scientifically the berry-type fruits of the tomato plant, they can also be considered a culinary vegetable, causing some confusion."
     end
