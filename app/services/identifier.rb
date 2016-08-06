@@ -15,7 +15,7 @@ class Identifier
             probabilities[language] = probability(words, language)
         end
 
-        probabilities.max_by{|k,v| v}.try(:first)
+        probabilities.max_by{|_k,v| v}.try(:first)
     end
 
     def probability(words, language)

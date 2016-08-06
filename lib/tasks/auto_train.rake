@@ -6,7 +6,7 @@ task :auto_train_from_wikipedia => :environment do
   puts "locale: #{locale}"
   puts "number of articles: #{number}"
 
-  for i in 1..number.to_i
+  (1..number.to_i).each do |i|
     puts "Training with text number #{i}"
     title, text = Wikipedia.article(locale)
     puts "Training from: #{title}, number of characters: #{text.length}"
