@@ -17,6 +17,10 @@
 #  index_chained_letters_on_language_id    (language_id)
 #  index_chained_letters_on_second_letter  (second_letter)
 #
+# Foreign Keys
+#
+#  fk_rails_5508e570c6  (language_id => languages.id)
+#
 
 class ChainedLetter < ActiveRecord::Base
   belongs_to :language

@@ -17,8 +17,12 @@
 #  fk_rails_d706eacb3f  (language_id => languages.id)
 #
 
-class Identification < ActiveRecord::Base
-  belongs_to :language
+FactoryGirl.define do
+  factory :identification do
+    text { FFaker::Lorem.paragraph }
 
-  validates_presence_of :text
+    factory :invalid_identification do
+      text nil
+    end
+  end
 end

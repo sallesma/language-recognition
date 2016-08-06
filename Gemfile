@@ -16,6 +16,8 @@ group :development, :test do
   gem 'byebug'
   gem 'pry'
   gem 'coveralls', require: false
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :development do
