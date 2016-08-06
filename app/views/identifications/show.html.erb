@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @identification.text %>
+</p>
+
+<p>
+  <strong>Resulting language:</strong>
+  <%= @identification.language.name %>
+</p>
+
+<%= link_to 'Back', identifications_path %>
