@@ -22,7 +22,7 @@ rake auto_train_from_wikipedia en 3
 where en is the locale and 3 the number or articles to fetch from wikipedia
 
 
-### Identify
+### Identify (deprecated: now uses html views)
 
 Sending a GET request:
 ```
