@@ -52,7 +52,7 @@ class Trainer
     def self.save_chained(chained_letters, language)
         chained_letters_sums = {}
         chained_letters.keys.map {|k| k.to_s.first}.uniq.each do |fl|
-            chained_letters_sums[fl] = language.chained_letters.where(first_letter: fl).sum(:occurences) + chained_letters.select { |k,v| k.first == fl }.values.reduce(:+)
+            chained_letters_sums[fl] = language.chained_letters.where(first_letter: fl).sum(:occurences) + chained_letters.select { |k,_v| k.first == fl }.values.reduce(:+)
         end
 
         chained_letters.each do |letters, occurences|
