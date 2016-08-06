@@ -6,24 +6,24 @@ gem 'pg'
 
 gem 'nokogiri'
 gem 'open_uri_redirections'
-gem 'sanitize'
+gem 'sanitize', '~> 4.1'
 
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  gem 'byebug'
-  gem 'pry'
+  gem 'byebug', '~> 9.0'
+  gem 'pry', '~> 0.10'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'ffaker'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.3.0'
   gem 'spring'
-  gem 'annotate'
+  gem 'annotate', '~> 2.7'
 end
 
 group :test do
