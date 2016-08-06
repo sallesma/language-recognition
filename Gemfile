@@ -6,7 +6,7 @@ gem 'pg'
 
 gem 'nokogiri'
 gem 'open_uri_redirections'
-gem 'sanitize'
+gem 'sanitize', '~> 4.1'
 
 group :production do
   gem 'rails_12factor'
