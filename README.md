@@ -15,11 +15,7 @@ All the hard work of thinking had been made by Dat Tran and Dharmendra Sharma at
 
 ### Train
 
-Sending a GET request:
-```
-http://localhost:3000/training.json?text=<text>&locale=<locale>
-```
-or using a task to fetch random articles on wikipedia:
+Using a task to fetch random articles on wikipedia:
 ```
 rake auto_train_from_wikipedia en 3
 ```
