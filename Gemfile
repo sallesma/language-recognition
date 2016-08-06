@@ -13,8 +13,8 @@ group :production do
 end
 
 group :development, :test do
-  gem 'byebug'
-  gem 'pry'
+  gem 'byebug', '~> 9.0'
+  gem 'pry', '~> 0.10'
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'ffaker'
