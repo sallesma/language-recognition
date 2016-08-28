@@ -6,11 +6,13 @@ task :auto_train_from_wikipedia => :environment do
   puts "locale: #{locale}"
   puts "number of articles: #{number}"
 
+  language = Language.find_by(locale: locale)
+
   (1..number.to_i).each do |i|
     puts "Training with text number #{i}"
-    title, text = Wikipedia.article(locale)
+    title, text = Wikipedia.article(language.locale)
     puts "Training from: #{title}, number of characters: #{text.length}"
-    Trainer.train(text, locale)
+    Trainer.new.process(language, text)
   end
 
   puts 'Finished training.'

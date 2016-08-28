@@ -2,7 +2,7 @@ class Identifier
 
     def process(identification)
         language = identify(identification.text)
-        identification.update(language: language)
+        identification.update!(language: language)
     end
 
     private
