@@ -21,4 +21,5 @@ class Language < ActiveRecord::Base
   has_many :identifications, dependent: :nullify
 
   validates_uniqueness_of :locale
+  validates_presence_of :locale
 end
