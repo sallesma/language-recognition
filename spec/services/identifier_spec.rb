@@ -3,9 +3,10 @@ Dir['./spec/fixtures/**/*.rb'].each { |f| require f }
 
 RSpec.describe Trainer, type: :service do
   before(:all) do
-    Trainer.train(Fixtures::Text::english, 'en')
-    Trainer.train(Fixtures::Text::french, 'fr')
-    Trainer.train(Fixtures::Text::spanish, 'es')
+    trainer = Trainer.new
+    trainer.process(Language.find_or_create_by(locale: 'en'), Fixtures::Text::english)
+    trainer.process(Language.find_or_create_by(locale: 'fr'), Fixtures::Text::french)
+    trainer.process(Language.find_or_create_by(locale: 'es'), Fixtures::Text::spanish)
 
     @identifier = Identifier.new
   end

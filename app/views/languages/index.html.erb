@@ -19,6 +19,7 @@
         <td><%= language.name %></td>
         <td><%= language.local_name %></td>
         <td><%= link_to 'Show', language %></td>
+        <td><%= link_to 'Train', language_train_path(language) %></td>
       </tr>
     <% end %>
   </tbody>

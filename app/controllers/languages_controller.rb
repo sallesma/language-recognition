@@ -1,5 +1,5 @@
 class LanguagesController < ApplicationController
-  before_action :set_language, only: :show
+  before_action :set_language, only: [:show, :train]
 
   def index
     @languages = Language.all
@@ -20,6 +20,11 @@ class LanguagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def train
+    Trainer.new.process(@language)
+    redirect_to @language, notice: 'Language was successfully trained.'
   end
 
   private

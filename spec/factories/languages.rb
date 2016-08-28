@@ -1,7 +1,7 @@
 
 FactoryGirl.define do
   factory :language do
-    locale { FFaker::Locale.code }
+    locale { 'en' }
     name { FFaker::Locale.language(locale) }
 
     factory :invalid_language do

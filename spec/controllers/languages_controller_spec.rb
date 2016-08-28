@@ -40,7 +40,7 @@ RSpec.describe LanguagesController, type: :controller do
     end
   end
 
-   describe "POST #create" do
+  describe "POST #create" do
 
     context "with valid params" do
       it "creates a new language" do
@@ -70,6 +70,29 @@ RSpec.describe LanguagesController, type: :controller do
       it "re-renders the 'new' template" do
         post :create, language: FactoryGirl.attributes_for(:invalid_language)
         expect(response).to render_template("new")
+      end
+    end
+  end
+
+  describe 'PATCH #train' do
+    before :each do
+      @language = FactoryGirl.create(:language)
+    end
+    
+    context "valid attributes" do
+      it "located the requested @language" do
+        patch :train, id: @language
+        expect(assigns(:language)).to eq(@language)
+      end
+    
+      it "calls a trainer service" do
+        expect_any_instance_of(Trainer).to receive(:process).with(@language)
+        patch :train, id: @language
+      end
+    
+      it "redirects to the trained contact" do
+        patch :train, id: @language
+        expect(response).to redirect_to @language
       end
     end
   end
