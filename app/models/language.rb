@@ -19,6 +19,7 @@ class Language < ActiveRecord::Base
   has_many :chained_letters, dependent: :destroy
 
   has_many :identifications, dependent: :nullify
+  has_many :trainings, dependent: :nullify
 
   validates_uniqueness_of :locale
   validates_presence_of :locale
